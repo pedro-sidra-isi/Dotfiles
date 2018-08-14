@@ -1,6 +1,7 @@
 # Vars
 
 # Alias
+alias cd="c"
 
 # Settings
 export ZSH=$HOME/Dotfiles/zsh/plugins/oh-my-zsh
@@ -13,12 +14,12 @@ export PLUGINS=$HOME/Dotfiles/zsh/plugins
 		cd $1;
 		ls;
 	}
-	alias cd="c"
 
 # Plugins
 
 plugins=(
   git
+  vi-mode
 )
 
 source $PLUGINS/oh-my-zsh/oh-my-zsh.sh
