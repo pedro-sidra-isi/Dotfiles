@@ -1,8 +1,4 @@
 " Keybindings
-nnoremap ; l
-nnoremap l k
-nnoremap k j
-nnoremap j h
 
 " Options
 set relativenumber number
@@ -13,6 +9,11 @@ syntax on
 
 set hlsearch
 
+set showcmd
+
 set background=dark
 
 " Macros
+" Plugins
+set laststatus=2
+set t_Co=256
