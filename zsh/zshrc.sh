@@ -1,7 +1,9 @@
 # Vars
 
 # Alias
-alias cd="c"
+
+# Theme
+ZSH_THEME="agnoster"
 
 # Settings
 export ZSH=$HOME/Dotfiles/zsh/plugins/oh-my-zsh
@@ -14,7 +16,7 @@ export PLUGINS=$HOME/Dotfiles/zsh/plugins
 		cd $1;
 		ls;
 	}
-
+	alias cd="c"
 # Plugins
 
 plugins=(
