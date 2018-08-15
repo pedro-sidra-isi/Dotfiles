@@ -18,6 +18,9 @@ set background=dark
 set laststatus=2
 set t_Co=256
 
+" For powerline
+set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
