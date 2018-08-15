@@ -10,7 +10,7 @@ export ZSH=$HOME/Dotfiles/zsh/plugins/oh-my-zsh
 export PLUGINS=$HOME/Dotfiles/zsh/plugins
 export TERM="screen-256color"
 
-   PATH="$HOME/.local/bin:$PATH"
+PATH="$HOME/.local/bin:$PATH"
 
 
 #Funcoes
