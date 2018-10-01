@@ -4,8 +4,10 @@
 " Macros
 
 " Plugins
+"
 " Powerline
-set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+" set rtp+=$HOME/.local/lib/python2.7/site-packages/powerline/bindings/vim/
+"
 " ------ VUNDLE for Plugins ------------------------------------------
 set nocompatible
 filetype off
@@ -14,11 +16,19 @@ call vundle#begin()
 " *----------PLUGINS: 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'sudar/vim-arduino-syntax'
-
+Plugin 'junegunn/fzf.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/nerdtree'
+Plugin 'w0rp/ale'
+Plugin 'itchyny/lightline.vim'
+Plugin 'tpope/vim-repeat'
+Plugin 'junegunn/fzf'
 " *------------------ 
 call vundle#end()            
 filetype plugin indent on 
 " -------------------------------------------------------------------
+"
+"  LightLine:
 
 " Options
 set relativenumber number
@@ -32,5 +42,9 @@ set background=dark
 set noshowmode
 set laststatus=2
 set t_Co=256
+
+" Keybindings
+map ; :Files<CR>
+map <C-o> :NERDTreeToggle<CR>
 
 syntax on
