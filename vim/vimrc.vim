@@ -19,16 +19,18 @@ Plugin 'sudar/vim-arduino-syntax'
 Plugin 'junegunn/fzf.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
-Plugin 'w0rp/ale'
+"Plugin 'w0rp/ale'
 Plugin 'itchyny/lightline.vim'
 Plugin 'tpope/vim-repeat'
 Plugin 'junegunn/fzf'
+Plugin 'oblitum/YouCompleteMe'
+Plugin 'tpope/vim-commentary'
 " *------------------ 
 call vundle#end()            
 filetype plugin indent on 
+
 " -------------------------------------------------------------------
 "
-"  LightLine:
 
 " Options
 set relativenumber number
@@ -42,9 +44,11 @@ set background=dark
 set noshowmode
 set laststatus=2
 set t_Co=256
+set incsearch
 
 " Keybindings
 map ; :Files<CR>
-map <C-o> :NERDTreeToggle<CR>
+map <C-T> :NERDTreeToggle<CR>
+map <F5> m8gg=G'8
 
 syntax on
