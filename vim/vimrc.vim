@@ -11,7 +11,7 @@
 " ------ VUNDLE for Plugins ------------------------------------------
 set nocompatible
 filetype off
-set rtp+=~/Dotfiles/vim/vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " *----------PLUGINS: 
 Plugin 'VundleVim/Vundle.vim'
