@@ -14,17 +14,24 @@ PATH="$HOME/.local/bin:$PATH"
 
 #Funcoes
 
-	# CD com ls
-	c(){
-		cd $1;
-		ls;
-	}
-	alias cd="c"
+# CD com ls
+c(){
+	cd $1;
+	ls;
+}
+alias cd="c"
+
+# Ultimo diretorio apenas 
+# (porra, usa pwd pra mostrar tudo, n precisa sempre)
+
+prompt_dir() {
+	prompt_segment blue black "${PWD##*/}"
+}
 # Plugins
 
 plugins=(
-  git
-  vi-mode
+git
+vi-mode
 )
 
 source $PLUGINS/oh-my-zsh/oh-my-zsh.sh

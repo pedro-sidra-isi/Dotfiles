@@ -1,6 +1,5 @@
 " Keybindings
 
-
 " Macros
 
 " Plugins
@@ -25,6 +24,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'junegunn/fzf'
 Plugin 'oblitum/YouCompleteMe'
 Plugin 'tpope/vim-commentary'
+Plugin 'edkolev/tmuxline.vim'
 " *------------------ 
 call vundle#end()            
 filetype plugin indent on 
@@ -45,6 +45,10 @@ set noshowmode
 set laststatus=2
 set t_Co=256
 set incsearch
+
+" Tmuxline
+let g:tmuxline_preset = 'nightly_fox'
+let g:tmuxline_powerline_separators = 0
 
 " Keybindings
 map ; :Files<CR>
