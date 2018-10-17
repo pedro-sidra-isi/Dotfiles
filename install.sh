@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # TODO: install stuff :(
+git submodule update --init --recursive
 
 # Install dependencies:
 sudo apt install vim
