@@ -34,7 +34,8 @@ git
 vi-mode
 )
 
+source $ZSH/oh-my-zsh.sh
+
 source $PLUGINS/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-source $ZSH/oh-my-zsh.sh
