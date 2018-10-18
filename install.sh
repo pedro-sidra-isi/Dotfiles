@@ -19,7 +19,10 @@ vim -c 'TmuxlineSnapshot ~/Dotfiles/tmux/snapshot' +qall
 
 # Install YouCompleteMe
 sudo apt-get install python3-dev
-python3 ~/.vim/bundle/YouCompleteMe/install.py --clang-completer
+if ! ls ~/.vim/bundle/YouCompleteMe/python
+then
+	python3 ~/.vim/bundle/YouCompleteMe/install.py --clang-completer
+fi
 
 # Install powerline fonts (set in terminal for prettiness)
 if ! ( ls ~/.local/share/fonts/ | grep powerline )
@@ -35,8 +38,6 @@ echo 'source-file ~/Dotfiles/tmux/tmux.conf' > ~/.tmux.conf
 
 # Install oh-my-zsh
 sudo apt-get install zsh
-sudo apt-get install curl wget
-
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-echo 'source ~/Dotfiles/zsh/zshrc.sh' >> ~/.zshrc
+git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+chsh -s /bin/zsh
+echo 'source ~/Dotfiles/zsh/zshrc.sh' > ~/.zshrc
