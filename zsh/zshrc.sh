@@ -1,3 +1,4 @@
+export ZSH=$HOME/.oh-my-zsh
 # Vars
 
 # Alias
@@ -35,4 +36,5 @@ vi-mode
 
 source $PLUGINS/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-stty -ixon
+
+source $ZSH/oh-my-zsh.sh
