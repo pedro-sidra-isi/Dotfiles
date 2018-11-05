@@ -24,18 +24,20 @@ alias cd="c"
 # Ultimo diretorio apenas 
 # (porra, usa pwd pra mostrar tudo, n precisa sempre)
 
-prompt_dir() {
-	prompt_segment blue black "${PWD##*/}"
-}
 # Plugins
 
 plugins=(
 git
 vi-mode
 )
-
 source $ZSH/oh-my-zsh.sh
 
+	prompt_dir() {
+  prompt_segment blue black '%c'
+}
 source $PLUGINS/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+
+# Disable ctrl-s shortcut that freezes terminal
+stty -ixon
