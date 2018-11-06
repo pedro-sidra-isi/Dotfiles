@@ -84,6 +84,8 @@ let python_highlight_all=1
 autocmd FileType python nnoremap <buffer> <F9> :!clear;python3 %<cr>
 autocmd FileType python inoremap <buffer> <F9> :!clear;python3 %<cr>
 
+autocmd FileType python nnoremap <buffer> <F8> :!clear;python3 -m pdb %<cr>
+autocmd FileType python inoremap <buffer> <F8> :!clear;python3 -m pdb %<cr>
 
 " Keybindings
 	map ; :Files<CR>
@@ -98,6 +100,10 @@ autocmd FileType python inoremap <buffer> <F9> :!clear;python3 %<cr>
 	noremap <silent> <C-Q> :q<CR>
 	vnoremap <silent> <C-Q> <C-C>:q<CR>
 	inoremap <silent> <C-Q> <C-O>:q<CR>
+
+    " Enter to add new line
+    noremap <Return> o<Esc>
+
 
 " Leader shortcuts
 	let mapleader=' '
