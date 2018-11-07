@@ -31,12 +31,22 @@ Plugin 'tpope/vim-surround'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'Konfekt/FastFold'
 
-Plugin 'davidhalter/jedi-vim'
+" Completion
+Plugin 'oblitum/YouCompleteMe'
+
+" Linting
+Plugin 'w0rp/ale'
+
+" Lint indicator in LightLine
+Plugin 'maximbaz/lightline-ale'
+
+" Colors
+Plugin 'flazz/vim-colorschemes'
 
 " Python
+Plugin 'davidhalter/jedi-vim'
 Plugin 'vim-scripts/indentpython.vim'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'oblitum/YouCompleteMe'
+Plugin 'hdima/python-syntax'
 " *------------------ 
 "
 call vundle#end()            
@@ -51,6 +61,7 @@ filetype plugin indent on
 	" Indentation stuff
 	set autoindent
 	set shiftwidth=4
+
 	set tabstop=4
 	set showtabline=2 
 	set softtabstop=4
@@ -84,9 +95,28 @@ filetype plugin indent on
 	set foldlevel=99
 	syntax on
 
+
 " YouCompleteMe Configs
 	let g:ycm_autoclose_preview_window_after_completion=1
 	map <leader>d  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" Jedi configs
+    let g:jedi#completions_enabled = 0
+" Lightline + ALE:
+    let g:lightline = {}
+
+    let g:lightline.component_expand = {
+          \  'linter_checking': 'lightline#ale#checking',
+          \  'linter_warnings': 'lightline#ale#warnings',
+          \  'linter_errors': 'lightline#ale#errors',
+          \  'linter_ok': 'lightline#ale#ok',
+          \ }
+    let g:lightline.component_type = {
+          \     'linter_checking': 'left',
+          \     'linter_warnings': 'warning',
+          \     'linter_errors': 'error',
+          \     'linter_ok': 'left',
+          \ }
+    let g:lightline.active = { 'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ]] }
 
 " Tmuxline
 	let g:tmuxline_preset = 'nightly_fox'
@@ -95,11 +125,11 @@ filetype plugin indent on
 " Python conf
 
 let python_highlight_all=1
-autocmd FileType python nnoremap <buffer> <F9> :!clear;python3 %<cr>
-autocmd FileType python inoremap <buffer> <F9> :!clear;python3 %<cr>
+autocmd FileType python nnoremap <buffer> <F9> :!clear;python3 %
+autocmd FileType python inoremap <buffer> <F9> :!clear;python3 %
 
-autocmd FileType python nnoremap <buffer> <F8> :!clear;python3 -m pdb %<cr>
-autocmd FileType python inoremap <buffer> <F8> :!clear;python3 -m pdb %<cr>
+autocmd FileType python nnoremap <buffer> <F8> :!clear;python3 -m pdb %
+autocmd FileType python inoremap <buffer> <F8> :!clear;python3 -m pdb %
 
 " Keybindings
 	map ; :Files<CR>

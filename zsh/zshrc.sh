@@ -22,8 +22,10 @@ c(){
 alias cd="c"
 
 
-
-alias pythonInit="cp ~/Code/utils/pythonSkeleton.py ."
+PYTHON_SKEL_PATH="$HOME/Code/utils/pythonSkeleton.py" 
+pInit(){
+    cp $PYTHON_SKEL_PATH ./$1;
+}
 
 
 # Ultimo diretorio apenas 
