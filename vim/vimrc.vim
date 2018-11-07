@@ -7,22 +7,36 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " *----------PLUGINS: 
 Plugin 'VundleVim/Vundle.vim'
+
+" Arduino...
 Plugin 'sudar/vim-arduino-syntax'
+
+" Fuzzy Finding with ; 
 Plugin 'junegunn/fzf.vim'
 Plugin 'junegunn/fzf'
-Plugin 'tpope/vim-surround'
+
+" Tree
 Plugin 'scrooloose/nerdtree'
-"Plugin 'w0rp/ale'
+
+" Pretty
 Plugin 'itchyny/lightline.vim'
-Plugin 'tpope/vim-repeat'
-Plugin 'oblitum/YouCompleteMe'
-Plugin 'tpope/vim-commentary'
 Plugin 'edkolev/tmuxline.vim'
+
+" Tim Pope
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-surround'
+
+" Folding
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'Konfekt/FastFold'
+
+Plugin 'davidhalter/jedi-vim'
+
+" Python
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'vim-syntastic/syntastic'
-Plugin 'jnurmine/Zenburn'
+Plugin 'oblitum/YouCompleteMe'
 " *------------------ 
 "
 call vundle#end()            
@@ -116,7 +130,7 @@ autocmd FileType python inoremap <buffer> <F8> :!clear;python3 -m pdb %<cr>
 	map <Leader>f za
 
 	" put from system clipboard
-	map <Leader>p "+p
+	map <Leader>p "*p
 
 	" Clear search
 	map <Leader>/ :let @/ = "" <CR>

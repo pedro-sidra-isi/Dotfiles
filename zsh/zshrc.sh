@@ -21,6 +21,11 @@ c(){
 }
 alias cd="c"
 
+
+
+alias pythonInit="cp ~/Code/utils/pythonSkeleton.py ."
+
+
 # Ultimo diretorio apenas 
 # (porra, usa pwd pra mostrar tudo, n precisa sempre)
 
