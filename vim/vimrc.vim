@@ -47,6 +47,7 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'hdima/python-syntax'
+Plugin 'jeetsukumaran/vim-pythonsense.git'
 " *------------------ 
 "
 call vundle#end()            
@@ -127,10 +128,11 @@ filetype plugin indent on
 " Python conf
 
 let python_highlight_all=1
-autocmd FileType python nnoremap <buffer> <F9> :!clear;python3 %
+autocmd FileType python nnoremap <F7> :let @b ='b'
+autocmd FileType python nnoremap <F9> :!clear; python3 % b
 autocmd FileType python inoremap <buffer> <F9> :!clear;python3 %
 
-autocmd FileType python nnoremap <buffer> <F8> :!clear;python3 -m pdb %
+autocmd FileType python nnoremap <buffer> <F8> :!clear;python3 -m pdb % 
 autocmd FileType python inoremap <buffer> <F8> :!clear;python3 -m pdb %
 
 " Keybindings
@@ -157,6 +159,9 @@ autocmd FileType python inoremap <buffer> <F8> :!clear;python3 -m pdb %
 	" Move tabs 
 	map <Leader>h gT
 	map <Leader>l gt
+
+	map <Leader>m ]m
+	map <Leader>M [m
 
 	" fold
 	map <Leader>f za
