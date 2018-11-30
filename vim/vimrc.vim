@@ -5,6 +5,7 @@ set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
 " *----------PLUGINS: 
 Plugin 'VundleVim/Vundle.vim'
 
@@ -32,7 +33,11 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'Konfekt/FastFold'
 
 " Completion
-Plugin 'oblitum/YouCompleteMe'
+" Plugin 'oblitum/YouCompleteMe'
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'roxma/nvim-yarp'
+Plugin 'roxma/vim-hug-neovim-rpc'
+Plugin 'zchee/deoplete-jedi'
 
 " Linting
 Plugin 'w0rp/ale'
@@ -98,10 +103,15 @@ filetype plugin indent on
 
     colorscheme Monokai
 
+" DeoPlete
+    let g:deoplete#enable_at_startup = 1
+      " let g:deoplete#disable_auto_complete = 1
+      autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+      inoremap <expr><tab> pumvisible()?"\<c-n>" : "\<tab>"
 
 " YouCompleteMe Configs
-	let g:ycm_autoclose_preview_window_after_completion=1
-	map <leader>d  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+	" let g:ycm_autoclose_preview_window_after_completion=1
+	" map <leader>d  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " Jedi configs
     let g:jedi#completions_enabled = 0
 " Lightline + ALE:
