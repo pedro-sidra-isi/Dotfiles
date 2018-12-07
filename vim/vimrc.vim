@@ -142,8 +142,8 @@ autocmd FileType python nnoremap <F7> :let @b ='b'
 autocmd FileType python nnoremap <F9> :!clear; python3 % b
 autocmd FileType python inoremap <buffer> <F9> :!clear;python3 %
 
-autocmd FileType python nnoremap <buffer> <F8> :!clear;python3 -m pdb % 
-autocmd FileType python inoremap <buffer> <F8> :!clear;python3 -m pdb %
+autocmd FileType python nnoremap <F8> :!clear;python3 -m pdb % b
+autocmd FileType python inoremap <F8> :!clear;python3 -m pdb % b
 
 " Keybindings
 	map ; :Files<CR>
