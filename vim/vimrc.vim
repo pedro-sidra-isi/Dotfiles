@@ -12,6 +12,9 @@ Plugin 'VundleVim/Vundle.vim'
 " Arduino...
 Plugin 'sudar/vim-arduino-syntax'
 
+" AutoPEP8
+Plugin 'hhatto/autopep8'
+
 " Fuzzy Finding with ; 
 Plugin 'junegunn/fzf.vim'
 Plugin 'junegunn/fzf'
@@ -27,6 +30,9 @@ Plugin 'edkolev/tmuxline.vim'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-surround'
+
+" Auto brackets
+Plugin 'jiangmiao/auto-pairs'
 
 " Folding
 Plugin 'tmhedberg/SimpylFold'
@@ -105,9 +111,13 @@ filetype plugin indent on
 
 " DeoPlete
     let g:deoplete#enable_at_startup = 1
+    let g:ale_fixers= ['autopep8','black']
       " let g:deoplete#disable_auto_complete = 1
       autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
       inoremap <expr><tab> pumvisible()?"\<c-n>" : "\<tab>"
+    
+" ALE Shortcuts
+    nmap <silent> <leader>e :ALENext<cr>
 
 " YouCompleteMe Configs
 	" let g:ycm_autoclose_preview_window_after_completion=1
@@ -144,7 +154,6 @@ autocmd FileType python inoremap <buffer> <F9> :!clear;python3 %
 
 autocmd FileType python nnoremap <buffer> <F8> :!clear;python3 -m pdb % 
 autocmd FileType python inoremap <buffer> <F8> :!clear;python3 -m pdb %
-
 " Keybindings
 	map ; :Files<CR>
 	map <C-T> :NERDTreeToggle<CR>
@@ -166,6 +175,7 @@ autocmd FileType python inoremap <buffer> <F8> :!clear;python3 -m pdb %
 " Leader shortcuts
 	let mapleader=' '
 
+
 	" Move tabs 
 	map <Leader>h gT
 	map <Leader>l gt
@@ -175,6 +185,12 @@ autocmd FileType python inoremap <buffer> <F8> :!clear;python3 -m pdb %
 
 	" fold
 	map <Leader>f za
+
+    " Fix
+    map <Leader>8 :ALEFix<CR>
+
+    " insert docstring
+    map <Leader>s o"""<Esc>o"""<Esc>O
 
 	" put from system clipboard
 	map <Leader>p "*p
