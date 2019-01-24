@@ -44,3 +44,7 @@ git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 # change default shell to zsh
 chsh -s /bin/zsh
 echo 'source ~/Dotfiles/zsh/zshrc.sh' > ~/.zshrc
+
+sudo apt-get install python3-pip
+pip3 install --user pynvim
+
