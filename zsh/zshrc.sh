@@ -48,3 +48,6 @@ source $PLUGINS/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Disable ctrl-s shortcut that freezes terminal
 stty -ixon
+
+# Open tmux on startup
+if [ "$TMUX" = "" ]; then tmux; fi
