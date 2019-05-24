@@ -161,7 +161,7 @@ autocmd FileType python inoremap <F8> :!clear;python3 -m pdb % b
 	map <F5> m8gg=G'8
 
 	" control S to save
-	noremap <silent> <C-S> :update<CR>
+	noremap <silent> <C-S> :update<CR><C-L>
 	vnoremap <silent> <C-S> <C-C>:update<CR>
 	inoremap <silent> <C-S> <C-O>:update<CR>
     
@@ -180,6 +180,8 @@ autocmd FileType python inoremap <F8> :!clear;python3 -m pdb % b
 	" Move tabs 
 	map <Leader>h gT
 	map <Leader>l gt
+
+	map <Leader>u ~
 
 	map <Leader>m ]m
 	map <Leader>M [m
