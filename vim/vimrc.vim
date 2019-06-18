@@ -53,6 +53,7 @@ Plugin 'maximbaz/lightline-ale'
 
 " Colors
 Plugin 'flazz/vim-colorschemes'
+Plugin 'rajasegar/vim-search-web.git'
 
 " Python
 Plugin 'davidhalter/jedi-vim'
@@ -155,10 +156,13 @@ autocmd FileType python inoremap <buffer> <F9> :!clear;python3 %
 autocmd FileType python nnoremap <F8> :!clear;python3 -m pdb % b
 autocmd FileType python inoremap <F8> :!clear;python3 -m pdb % b
 
+autocmd FileType python nnoremap <F5> :!clear;python3 -m pdb -c "b =line('.')" -c "c" % b
+autocmd FileType python inoremap <F5> :!clear;python3 -m pdb -c "b =line('.')" -c "c" % b
+
+
 " Keybindings
 	map ; :Files<CR>
 	map <C-T> :NERDTreeToggle<CR>
-	map <F5> m8gg=G'8
 
 	" control S to save
 	noremap <silent> <C-S> :update<CR><C-L>
